@@ -1,0 +1,24 @@
+
+push rbp
+mov rbp, rsp
+sub rsp, 0x10
+movabs rax, 0x726569746c756147 ; 'Gaultier'
+mov qword [var_ch], rax
+mov dword [var_4h], 0
+jmp 0x117a
+
+mov eax, dword [var_4h]
+cdqe
+movzx eax, byte [rbp + rax - 0xc]
+movsx eax, al
+mov edi, eax                ; int c
+call sym.imp.putchar        ; int putchar(int c)
+mov edi, 0xa                ; int c
+call sym.imp.putchar        ; int putchar(int c)
+add dword [var_4h], 1
+
+cmp dword [var_4h], 7
+jle 0x1158
+mov eax, 1
+leave
+ret

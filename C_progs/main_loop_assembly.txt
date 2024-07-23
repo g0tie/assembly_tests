@@ -2,7 +2,7 @@
 push rbp
 mov rbp, rsp
 sub rsp, 0x10
-movabs rax, 0x726569746c756147 ; 'Gaultier'
+movabs rax, 0x726569746c756147 ; 
 mov qword [var_ch], rax
 mov dword [var_4h], 0
 jmp 0x117a
